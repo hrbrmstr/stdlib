@@ -33,7 +33,10 @@ export class AbstractFile {
   }
   async json() {
     return (await remote_fetch(this)).json();
-  }
+	}
+	async ndjson() {
+		return (await remote_fetch(this)).ndjson();
+	}
   async stream() {
     return (await remote_fetch(this)).body;
   }
@@ -149,5 +152,8 @@ class ZipArchiveEntry extends AbstractFile {
   }
   async json() {
     return JSON.parse(await this.text());
-  }
+	}
+	async ndjson() {
+		return (await this.text()).split("\n").map(JSON.parse)
+	}
 }

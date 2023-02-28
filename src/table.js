@@ -200,7 +200,8 @@ const loadTableDataSource = sourceCache(async (source, name) => {
     switch (source.mimeType) {
       case "text/csv": return source.csv();
       case "text/tab-separated-values": return source.tsv();
-      case "application/json": return source.json();
+			case "application/json": return source.json();
+			case "application/x-ndjson": return source.ndjson();
       case "application/x-sqlite3": return source.sqlite();
     }
     if (/\.(arrow|parquet)$/i.test(source.name)) return loadDuckDBClient(source, name);

@@ -314,6 +314,14 @@ Returns a promise to the file’s contents, parsed as JSON into JavaScript value
 const logs = await FileAttachment("weekend-logs.json").json();
 ```
 
+<a href="#attachment_ndjson" name="attachment_ndjson">#</a> *attachment*.<b>ndjson</b>() [<>](https://github.com/observablehq/stdlib/blob/main/src/fileAttachment.js "Source")
+
+Returns a promise to the file’s contents, parsed as newline-delimted JSON (ndjson) into JavaScript values.
+
+```js
+const logs = await FileAttachment("weekend-logs.json").ndjson();
+```
+
 <a href="#attachment_csv" name="attachment_csv">#</a> *attachment*.<b>csv</b>({<i>array</i> = false, <i>typed</i> = false} = {}) [<>](https://github.com/observablehq/stdlib/blob/main/src/fileAttachment.js "Source")
 
 Returns a promise to the file’s contents, parsed as comma-separated values (CSV) into an array.
