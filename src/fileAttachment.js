@@ -154,6 +154,6 @@ class ZipArchiveEntry extends AbstractFile {
     return JSON.parse(await this.text());
 	}
 	async ndjson() {
-		return (await this.text()).split("\n").map(JSON.parse)
+		return (await this.text()).split("\n").map(jsonline => JSON.parse(jsonline))
 	}
 }
